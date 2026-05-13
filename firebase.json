@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "framework": "nextjs",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "appAssociation": "AUTO"
+  }
+}

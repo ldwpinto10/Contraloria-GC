@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Professional financial dashboard background",
+      "imageUrl": "https://picsum.photos/seed/finance-hero/1200/600",
+      "imageHint": "finance analysis"
+    },
+    {
+      "id": "finance-logo",
+      "description": "Financial management logo icon",
+      "imageUrl": "https://placehold.co/512x512/f8fafc/0055ff?text=CONTRALORIA+GC",
+      "imageHint": "finance icon"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Perfil de usuario con roles de acceso y credenciales.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nombre completo del usuario"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Correo electrónico de acceso"
+        },
+        "password": {
+          "type": "string",
+          "description": "Contraseña de acceso al sistema"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "Admin",
+            "Supervisor",
+            "User"
+          ],
+          "description": "Nivel de acceso en el sistema"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password",
+        "role"
+      ]
+    },
+    "InventoryTemplate": {
+      "title": "Inventory Template",
+      "description": "Plantilla personalizada de productos por marca.",
+      "type": "object",
+      "properties": {
+        "brand": { "type": "string" },
+        "items": { "type": "array", "items": { "type": "object" } }
+      }
+    }
+  },
+  "auth": {
+    "providers": [
+      "password"
+    ]
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "#/entities/User",
+      "description": "Colección de perfiles de usuario"
+    },
+    "/users/{userId}/inventoryTemplates/{brand}": {
+      "schema": "#/entities/InventoryTemplate",
+      "description": "Plantillas de inventario guardadas por el usuario"
+    }
+  }
+}
